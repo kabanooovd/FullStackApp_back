@@ -1,11 +1,14 @@
+import fileService from "./fileService.js";
 import Person from "./Person.js";
 
 class PersonService {
-	async create(person) {
-		// const fileName = fileService.saveFile(picture);
-		// const createdPost = await Post.create({ ...post, picture: fileName });
-		const createdPerson = await Person.create(person);
-		return createdPerson;
+	async create(person, photo) {
+		if (photo) {
+			const fileName = fileService.saveFile(photo);
+			return await Person.create({ ...person, photo: fileName });
+		} else {
+			return await Person.create(person);
+		}
 	}
 	async getAll() {
 		const person = await Person.find();

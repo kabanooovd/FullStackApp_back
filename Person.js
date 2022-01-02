@@ -21,6 +21,10 @@ const Person = new mongoose.Schema({
 		type: Boolean,
 		required: true,
 	},
+	rating: {
+		type: Number,
+		required: true,
+	},
 	photo: { type: String },
 });
 
