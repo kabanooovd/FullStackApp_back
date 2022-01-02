@@ -2,10 +2,13 @@ import express from "express";
 import mongoose from "mongoose";
 import router from "./router.js";
 import fileupload from "express-fileupload";
+import cors from 'cors'
 
 const PORT = 5000;
 
 const app = express();
+
+app.use(cors()) // Use this after the variable declaration
 
 app.use(express.json());
 app.use(express.static("static"));
