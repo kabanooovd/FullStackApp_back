@@ -1,11 +1,12 @@
 import Router from "express";
 import PersonController from "./PersonController.js";
+import cors from 'cors'
 const router = new Router();
 
-router.get("/person", PersonController.getAll);
-router.get("/person/:id", PersonController.getOne);
-router.post("/person", PersonController.create);
-router.put("/person", PersonController.update);
-router.delete("/person/:id", PersonController.remove);
+router.get("/person", cors(), PersonController.getAll);
+router.get("/person/:id", cors(), PersonController.getOne);
+router.post("/person", cors(), PersonController.create);
+router.put("/person", cors(), PersonController.update);
+router.delete("/person/:id", cors(), PersonController.remove);
 
 export default router;
