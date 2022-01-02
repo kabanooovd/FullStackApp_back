@@ -1,14 +1,6 @@
 import PersonService from "./PersonService.js";
 
 class PersonController {
-	// async create(req, res) {
-	// 	try {
-	// 		const person = await PersonService.create(req.body, req.files.photo);
-	// 		res.json(person);
-	// 	} catch (err) {
-	// 		res.status(500).json(err);
-	// 	}
-	// }
 	async create(req, res) {
 		try {
 			const person = await PersonService.create(
