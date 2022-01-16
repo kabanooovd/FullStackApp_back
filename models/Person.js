@@ -5,6 +5,10 @@ const Person = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	userName: {
+		type: String,
+		required: true,
+	},
 	profession: {
 		type: String,
 		required: true,
@@ -25,6 +29,7 @@ const Person = new mongoose.Schema({
 		type: Number,
 		required: true,
 	},
+	status: { type: String, default: "HAVE NO STATUS YET..." },
 	photo: { type: String },
 });
 

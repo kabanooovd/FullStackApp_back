@@ -1,19 +1,20 @@
 import express from "express";
 import mongoose from "mongoose";
-import router from "./routers/router.js";
+import personRouter from "./routers/personRouter.js";
+import authRouter from "./routers/authRouter.js";
 import fileupload from "express-fileupload";
-import cors from 'cors'
-
-const PORT = 5000;
+import cors from "cors";
+import { PORT } from "./utils/config.js";
 
 const app = express();
 
-app.use(cors()) // Use this after the variable declaration
-
 app.use(express.json());
 app.use(express.static("static"));
-app.use(fileupload({}))
-app.use("/", router);
+app.use(cors());
+app.use(fileupload({}));
+app.use("/", personRouter);
+app.use("/auth", authRouter);
+
 
 const un = "DimasUser";
 const pw = "user";
