@@ -1,4 +1,4 @@
-import PersonService from "./PersonService.js";
+import PersonService from "../services/PersonService.js";
 
 class PersonController {
 	async create(req, res) {

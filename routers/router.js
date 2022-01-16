@@ -1,5 +1,5 @@
 import Router from "express";
-import PersonController from "./PersonController.js";
+import PersonController from "../controllers/PersonController.js";
 import cors from 'cors'
 const router = new Router();
 

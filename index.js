@@ -1,6 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
-import router from "./router.js";
+import router from "./routers/router.js";
 import fileupload from "express-fileupload";
 import cors from 'cors'
 

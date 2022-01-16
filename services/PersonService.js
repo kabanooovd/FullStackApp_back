@@ -1,5 +1,5 @@
-import fileService from "./fileService.js";
-import Person from "./Person.js";
+import fileService from "../utils/fileService.js";
+import Person from "../models/Person.js";
 
 class PersonService {
 	async create(person, photo) {
