@@ -33,6 +33,16 @@ class PersonController {
 			res.status(500).json(err);
 		}
 	}
+	async getProfileByUsername(req, res) {
+		try {
+			const person = await PersonService.getProfileByUsername(
+				req.params.userName
+			);
+			res.json({ person });
+		} catch (err) {
+			res.status(500).json(err);
+		}
+	}
 }
 
 export default new PersonController();

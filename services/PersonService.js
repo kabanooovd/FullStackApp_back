@@ -28,6 +28,13 @@ class PersonService {
 		const person = await Person.findByIdAndDelete(id);
 		return person;
 	}
+	async getProfileByUsername(userName) {
+		if (!userName) {
+			throw new Error(`${userName} doesnt exist anymore... `);
+		}
+		const person = await Person.findOne({userName});
+		return person;
+	}
 }
 
 export default new PersonService();

@@ -92,6 +92,19 @@ class AuthController {
 			res.status(500).join(err);
 		}
 	}
+	async getUserData(req, res) {
+		try {
+			const { userName } = req.params;
+			const currentUser = await User.findOne({ userName });
+			if (!currentUser) {
+				throw new Error(`${userName} doesnt exist anymore... `);
+			}
+			return res.json({ currentUser });
+		} catch (err) {
+			console.log(err);
+			res.status(500).join(err);
+		}
+	}
 }
 
 export default new AuthController();
